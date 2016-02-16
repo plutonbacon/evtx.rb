@@ -1,0 +1,10 @@
+# RubyGems-related
+.bundle/
+Gemfile.lock
+vendor/
+
+# Yard-related
+.yardoc/
+
+# IDE-related
+.idea/

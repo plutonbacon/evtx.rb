@@ -42,6 +42,18 @@ module Evtx
       signature == "ElfFile\x00"
     end # def check_signature
 
+    def check_major_version
+      major_version == 0x3
+    end # def check_major_version
+
+    def check_minor_version
+      minor_version == 0x1
+    end # def check_minor_version
+
+    def check_header_block_size
+      header_block_size == 0x1000
+    end # def check_header_block_size
+
     # Check if the log has been opened and was changed, though not
     # all changes might be reflected in the file header.
     #
@@ -64,6 +76,14 @@ module Evtx
       number_of_chunks
     end # def number_of_chunks
 
-    public(:check_signature, :dirty?, :full?, :number_of_chunks)
+    # @return [Boolean]
+    def verify
+      return check_signature &&
+             check_major_version &&
+             check_minor_version &&
+             check_header_block_size
+    end # def verify
+
+    public(:number_of_chunks, :verify)
   end # class FileHeader
 end # module Evtx

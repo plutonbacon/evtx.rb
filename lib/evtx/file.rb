@@ -17,8 +17,6 @@ module Evtx
     # @return [Evtx::FileHeader]
     attr_accessor :fileheader
 
-    #
-    #
     # @return [Array]
     attr_accessor :chunks
 
@@ -29,14 +27,10 @@ module Evtx
       open path, 'r' do |f|
         buffer = f.read 4096
         @fileheader = FileHeader.read(buffer)
-
-        # TODO - Validate the header
-
         offset += 4096
         f.seek offset
         for i in 1..@fileheader.number_of_chunks
           buffer = f.read 65536
-          puts ChunkHeader.read(buffer).signature
           offset += 65536
           f.seek offset
         end

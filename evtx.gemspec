@@ -20,13 +20,13 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'bindata',              '~> 2.3.0'
+  spec.add_dependency 'bindata', '~> 2.3.0'
 
   # Development only
-  spec.add_development_dependency 'bundler',  '~> 1.11.2'
-  spec.add_development_dependency 'pry',      '~> 0.10.3'
-  spec.add_development_dependency 'rake',     '~> 10.5.0'
-  spec.add_development_dependency 'rubocop',  '~> 0.37.2'
-  spec.add_development_dependency 'rspec',    '~> 3.4.0'
-  spec.add_development_dependency 'yard',     '~> 0.8.7.6'
+  spec.add_development_dependency 'bundler'
+  spec.add_development_dependency 'pry'
+  spec.add_development_dependency 'rake'
+  spec.add_development_dependency 'rubocop'
+  spec.add_development_dependency 'rspec'
+  spec.add_development_dependency 'yard'
 end

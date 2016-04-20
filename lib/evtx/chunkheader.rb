@@ -4,9 +4,8 @@ require 'bindata'
 module Evtx
   #
   class ChunkHeader < BinData::Record
-
     # "ElfChunk\x00"
-    string    :signature, :length => 8
+    string    :signature, length: 8
 
     uint64le  :first_event_record_number
     uint64le  :last_event_record_number
@@ -16,7 +15,7 @@ module Evtx
     uint32le  :last_event_record_data_offset
     uint32le  :free_space_offset
     uint32le  :event_records_checksum
-    string    :unused, :length => 44
+    string    :unused, length: 44
     uint32le  :checksum
 
     private

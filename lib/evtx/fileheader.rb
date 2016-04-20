@@ -12,9 +12,8 @@ module Evtx
   # in use. Additionally, the header's integrity is protected by a
   # 32 bit checksum.
   class FileHeader < BinData::Record
-
     # "ElfFile\x00"
-    string    :signature, :length => 8
+    string    :signature, length: 8
 
     uint64le  :first_chunk_number
     uint64le  :last_chunk_number
@@ -24,7 +23,7 @@ module Evtx
     uint16le  :major_version
     uint16le  :header_block_size
     uint16le  :number_of_chunks
-    string    :unknown, :length => 76
+    string    :unknown, length: 76
 
     # "0x0001 - Dirty || 0x0002 - Full"
     uint32le  :flags
@@ -78,10 +77,10 @@ module Evtx
 
     # @return [Boolean]
     def verify
-      return check_signature &&
-             check_major_version &&
-             check_minor_version &&
-             check_header_block_size
+      check_signature &&
+        check_major_version &&
+        check_minor_version &&
+        check_header_block_size
     end # def verify
 
     public(:number_of_chunks, :verify)

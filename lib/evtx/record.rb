@@ -4,7 +4,6 @@ require 'bindata'
 module Evtx
   #
   class Record < BinData::Record
-
     # "ElfChunk\x00"
     uint32le  :signature
 

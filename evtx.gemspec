@@ -6,12 +6,12 @@ require 'evtx/version'
 Gem::Specification.new do |spec|
   spec.name          = 'evtx'
   spec.version       = Evtx::VERSION
-  spec.authors       = ["Pluto 'n Bacon"]
-  spec.email         = ['plutonbacon@dynosoft.org']
+  spec.authors       = ['Cordoba Security']
+  spec.email         = ['opensource@cordoba-sec.com']
   spec.summary       = 'A pure Ruby parser for recent Windows Event Log files.'
   spec.description   = 'A pure Ruby parser for recent Windows Event Log files.'
-  spec.homepage      = 'https://github.com/plutonbacon/evtx.rb.git'
-  spec.license       = 'ISC'
+  spec.homepage      = 'https://github.com/cordoba-sec/evtx.rb.git'
+  spec.license       = 'MIT'
 
   spec.required_ruby_version = '>= 2.0.0'
 

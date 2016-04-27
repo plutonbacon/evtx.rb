@@ -28,7 +28,7 @@ module Evtx
         @fileheader = FileHeader.read(buffer)
         offset += HEADER_SIZE
         f.seek offset
-        @fileheader.number_of_chunks.each do
+        @fileheader.number_of_chunks.times do
           buffer = f.read CHUNK_SIZE
           offset += CHUNK_SIZE
           f.seek offset
